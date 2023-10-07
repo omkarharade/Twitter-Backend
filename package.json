@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "- User should be able to create a post\r   - [The post/tweet cannot be more than 250 characters]\r   - [Every post/tweet will be having support for image upload]",
   "main": "index.js",
+  "type" : "module",
   "scripts": {
     "start": "npx nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,4 +1,4 @@
-const { TweetRepository, HashtagRepository } = require("../repository/index");
+import { TweetRepository, HashtagRepository } from "../repository/index.js";
 
 class TweetService {
 	constructor() {
@@ -10,7 +10,8 @@ class TweetService {
 		const content = data.content;
 		const tags = content
 			.match(/#[a-zA-Z0-9_]+/g)
-			.map((tag) => tag.substring(1)); // this regex extracts hashtags
+			.map((tag) => tag.substring(1))
+			.map((tag) => tag.toLowerCase()); // this regex extracts hashtags
 
 		const tweet = await this.TweetRepository.create(data);
 
@@ -33,4 +34,4 @@ class TweetService {
 	}
 }
 
-module.exports = TweetService;
+export default TweetService;
